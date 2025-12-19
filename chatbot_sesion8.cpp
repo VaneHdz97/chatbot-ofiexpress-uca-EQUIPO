@@ -62,7 +62,12 @@ int main() {
 
     while (opcion != 5) {
         mostrarMenu();
-        cin >> opcion;
+        if (!(cin >> opcion)) {
+        cin.clear();
+        cin.ignore(1000, '\n');
+        cout << "Bot: Entrada invalida. Debes ingresar un numero." << endl;
+        continue;
+}
 
         switch (opcion) {
             case 1:
